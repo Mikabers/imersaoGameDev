@@ -10,34 +10,35 @@ let inimigo;
 
 const matrizInimigo = [
   [0, 0],
-  [104, 0],
-  [208, 0],
-  [312, 0],
+  [105, 0],
+  [210, 0],
+  [315, 0],
   [0, 104],
-  [104, 104],
-  [208, 104],
-  [312, 104],
+  [105, 104],
+  [210, 104],
+  [315, 104],
   [0, 208],
-  [104, 208],
-  [208, 208],
-  [312, 208],
+  [105, 208],
+  [210, 208],
+  [315, 208],
   [0, 312],
-  [104, 312],
-  [208, 312],
-  [312, 312],
-  [0, 418],
-  [104, 418],
-  [208, 418],
-  [312, 418],
-  [0, 522],
-  [104, 522],
-  [208, 522],
-  [312, 522],
-  [0, 626],
-  [104, 626],
-  [208, 626],
-  [312, 626],
-]
+  [105, 312],
+  [210, 312],
+  [315, 312],
+  [0, 409],
+  [105, 409],
+  [210, 409],
+  [315, 409],
+  [0, 503],
+  [105, 503],
+  [210, 503],
+  [315, 503],
+  [0, 609],
+  [105, 609],
+  [210, 609],
+  [315, 609],
+];
+
 const matrizPersonagem = [
   [0, 0],
   [220, 0],
@@ -55,7 +56,7 @@ const matrizPersonagem = [
   [220, 810],
   [440, 810],
   [660, 810],
-]
+];
 
 function preload() {
   imagemCenario = loadImage('imagens/cenario/floresta.png');
@@ -70,29 +71,29 @@ function setup() {
   cenario = new Cenario(imagemCenario, 3);
   personagem = new Personagem(matrizPersonagem, imagemPersonagem, 0, 110, 135, 220, 270);
   inimigo = new Inimigo(matrizInimigo, imagemInimigo, width - 52, 52, 52, 104, 104);
-  frameRate(40)
+  
+  frameRate(40);
   somDoJogo.loop();
 }
 
 function keyPressed() {
-  if (key === 'ArrowUp') {
-    personagem.pula()
-    somDoPulo.play()
+  if(key === 'ArrowUp') {
+    personagem.pula();
+    somDoPulo.play();
   }
 }
 
 function draw() {
   cenario.exibe();
   cenario.move();
-
+  
   personagem.exibe();
-  personagem.aplicaGravidade();
-
+  personagem.aplicarGravidade();
+  
   inimigo.exibe();
   inimigo.move();
-
-  if (personagem.estaColidindo(inimigo)) {
-    console.log('colidiu')
-    noLoop()
+  
+  if(personagem.estaColidindo(inimigo)) {
+    noLoop();
   }
 }

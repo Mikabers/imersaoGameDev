@@ -7,13 +7,13 @@ function setup() {
   jogo.setup();
   cenas = {
     jogo,
-    telaInicial,
+    telaInicial
   };
   botaoGerenciador = new BotaoGerenciador('Start Game', width / 2, height / 2);
 }
 
 function keyPressed() {
-  jogo.keyPressed(key);
+ jogo.keyPressed(key);
 }
 
 function draw() {

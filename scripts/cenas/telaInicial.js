@@ -1,6 +1,6 @@
 class TelaInicial {
   constructor(){
-    
+  
   }
   
   draw() {
@@ -16,7 +16,7 @@ class TelaInicial {
   _texto() {
     textFont(fonteTelaInicial);
     textAlign(CENTER);
-    textSize(150)
+    textSize(150);
     text('Hipsta', width / 2, height / 2);
     textSize(60);
     text('adventures', width / 2, height / 5 * 3);
@@ -26,5 +26,4 @@ class TelaInicial {
     botaoGerenciador.posicaoY = height / 7 * 5;
     botaoGerenciador.draw();
   }
-  
 }

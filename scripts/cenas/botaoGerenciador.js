@@ -17,5 +17,4 @@ class BotaoGerenciador {
     this.botao.remove();
     cenaAtual = 'jogo';
   }
-  
 }
